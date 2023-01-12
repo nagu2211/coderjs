@@ -163,21 +163,25 @@ i{
     padding: 80px;
 }
 .qwerty{
-    margin-left: 100px;
+    flex-wrap: nowrap;
     display: flex;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
+    padding: 20px;
 }
 .qwerty2{
-    margin-right: 10px;
+    padding: 20px;
+    flex-wrap: nowrap;
     display: flex;
-    justify-content: end;
+    justify-content: center;
     align-items: center;
 }
+
 .zapatillasQwe{
     display: flex;
-    justify-content:flex-start;
+    justify-content:center;
     flex-wrap: wrap;
+    flex-direction: column;
 }
 .card{
     margin: 10px;
@@ -205,6 +209,7 @@ i{
     transition: 0.5s;
 }
 .card:hover .imgBox{
+
     transform: rotate(-35deg);
 }
 @media screen and (min-width: 1063px){

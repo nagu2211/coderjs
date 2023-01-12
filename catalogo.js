@@ -55,6 +55,7 @@ stockProductos.forEach((prod)=> {
     }
 })
 
+
 /* funcion de continuar compra */
 procesarCompra.addEventListener('click', ()=>{
     if(carrito.length === 0){

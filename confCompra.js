@@ -2,6 +2,7 @@
 const activarFuncion = document.querySelector('#activarFuncion')
 const totalProceso = document.querySelector('#totalProceso')
 const pago = document.querySelector('#procesar-pago')
+const alertexito = document.getElementById('alertexito')
 
 /* Llamando al carrito del localstorage */
 const lista = localStorage.getItem('carrito')
@@ -10,12 +11,18 @@ const lista = localStorage.getItem('carrito')
     } else{
         listaCarrito = JSON.parse(lista);
     }
-
+const registro = localStorage.getItem('registro')
+    if(registro == null){
+        datosRegistro = []
+    } else{
+        datosRegistro = JSON.parse(registro);
+    }
 /* funcion que hace que el div escuche el evento click al cargar el dom*/
 activarFuncion.addEventListener("click", procesarPedido);
 
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelector("#activarFuncion").click(procesarPedido);
+    
 });
 
     /* se muestra el carrito mas a detalle */
@@ -42,12 +49,15 @@ function procesarPedido(){
 pago.addEventListener('submit', enviarPedido)
 /* pequeños retoques cuando le dan a confirmar pedido y vacia el localstorage del carrito */
 function enviarPedido(e){
+    if((datosRegistro[1] == null) || (datosRegistro[5] == null)){
+        alert('debes iniciar sesion para finalizar compra')
+    } else {
+
     e.preventDefault()
-    const cliente = document.querySelector('#cliente').value
     const correo = document.querySelector('#correo').value
 
-    if(correo === '' || cliente === ''){
-        alert('Debes completar todos los formularios')
+    if(correo === ''){
+        alert('Debes completar tu email')
     } else{
         const spinner = document.querySelector('#spinner')
         spinner.classList.add('d-flex')
@@ -62,13 +72,14 @@ function enviarPedido(e){
         const alertExito = document.createElement('p')
         alertExito.classList.add('alert', 'alerta', 'd-block', 'text-center', 'cold-md-12', 'mt-2', 'alert-success')
         alertExito.textContent = "Compra realizada exitosamente"
-        pago.appendChild(alertExito)
+        alertexito.appendChild(alertExito)
 
         setTimeout(() => {
             alertExito.remove()
         }, 3000)
     }
 
+    }
     localStorage.clear()
 }
 
