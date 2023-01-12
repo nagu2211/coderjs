@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../stiles.css">
+    <script defer src="../catalogo.js"></script>
+    <title>Qwerty - Catalogo</title>
+</head>
+<body>
+    <!--Header y navbar-->
+    <header class="navbarCat">
+        <nav>
+            <div class="logo">
+                <h2><span class="Q">Q</span>werty</h2>
+            </div>
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../index.html #masPopulares">+Populares</a></li>
+                <li><a href="#">Catalogo</a></li>
+                <li><a href="../index.html #opiniones">Valoraciones</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+            <button id="boton-carrito"><i class="fa-solid fa-cart-arrow-down" id="boton-carrito"></i><span id="contadorCarrito">0</span></button>
+            <button type="button" class="ingresa" id="botonAccederCat">Acceder</button>
+        </nav>
+    </header>
+    <!--contenido de la pagina-->
+    <!--Titulo y presentacion-->
+    <div class="contIndex">
+        <h1>Catálogo</h1>
+        <p>Explora nuestros diversos productos y las diferentes marcas con las que estamos asociados</p>
+        <div>
+            <a href="#Cat"><button class="cta">
+                <span>Explorar</span>
+                <svg viewBox="0 0 13 10" height="10px" width="15px">
+                <path d="M1,5 L11,5"></path>
+                <polyline points="8 1 12 5 8 9"></polyline>
+                </svg>
+            </button></a>
+        </div>
+    </div>
+    <!-- seccion catalogo -->
+    <div class="seccionCatalogo">
+    <h2 class="titulosIndex" id="Cat">Catalogo.</h2>
+    <main class="gallery" id="contenedor">
+
+    </main>
+    <div class="modal-contenedor">
+        <div class="modal-carrito">
+            <h3>Carrito</h3>
+            <button id="carritoCerrar"><i class="fas fa-times-circle"></i></button>
+            <div class="modal-contenido"></div>
+            <p class="precioProducto">Precio total: $<span id="precioTotal">0</span></p>
+                <button id="vaciar-carrito" class="boton-agregar">Vaciar carrito</button>
+                <button id="procesarCompra" class="boton-agregar">Continuar compra</button>
+        </div>
+        
+    </div>
+    
+</body>
+</html>
