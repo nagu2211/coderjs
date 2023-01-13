@@ -50,6 +50,16 @@ stockProductos.forEach((prod)=> {
 
     if(comprar){
     comprar.addEventListener('click', ()=>{
+        Toastify({
+            text: "¡Agregado al carrito!",
+            offset: {
+            x: 50, 
+            y: 10, // 
+            },
+            style: {
+                background: "linear-gradient(to top, #ff626d, #fcad72)",
+            },
+            }).showToast();
         agregarAlCarrito(id)
     })
     }
@@ -129,6 +139,16 @@ function agregarAlCarrito(id){
 function eliminarProducto(id){
     prodId = id
     carrito = carrito.filter((prod) => prod.id !== prodId)
+    Toastify({
+        text: "¡Producto eliminado del carrito!",
+        offset: {
+        x: 50, 
+        y: 10, // 
+        },
+        style: {
+            background: "linear-gradient(to top, #ff626d, #fcad72)",
+        },
+        }).showToast();
     mostrarCarrito()
 }
 
