@@ -7,14 +7,14 @@
 .navbar {
     height: 100vh;
     width: 100%;
-    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(./images/fondo-prueba.jpg);
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(./images/fondo-prueba.webp);
     background-size: cover;
     background-position: center;
 }
 .navbarCat {
     height: 100vh;
     width: 100%;
-    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(./images/fondocat.jpg);
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(./images/fondocat.webp);
     background-size: cover;
     background-position: center;
 }
@@ -51,7 +51,7 @@ nav ul li a:hover{
 .navbarCompra{
     height: 20%;
     width: 100%;
-    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(./images/fondo-prueba.jpg);
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(./images/fondo-prueba.webp);
     background-size: cover;
     background-position: center;
 }
