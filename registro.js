@@ -29,10 +29,22 @@ function registrarse(){
     localStorage.setItem("registro", JSON.stringify(registro))
     
     if((nombreReg == 0) || (usuarioReg == 0) || (emailReg == 0) || (domicilioReg == 0) || (localidadReg == 0) || (passwordReg == 0) ){
-        alert('todos los campos son obligatorios')
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'Todos los campos son obligatorios',
+            footer: '<a href="">Why do I have this issue?</a>'
+        })
     } else {
-        alert('Registro exitoso! Bievenido')
-        window.location = "../index.html"
+        Swal.fire(
+            'Excelente',
+            'Registrado exitosamente',
+            'success'
+        )
+        setTimeout(() => {
+            window.location = "../index.html"
+        }, 2000);
+        
     }
 }
 const usuarioLog = document.getElementById('usuario')
@@ -49,9 +61,22 @@ const botonAcceder = document.getElementById('button')
 botonAcceder.addEventListener('click',login)
 function login(){
     if((usuarioLog.value == datosRegistro[1]) && (passwordLog.value == datosRegistro[5])){
-        alert('logueado exitosamente')
-        location.href = "../index.html"
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Has sido logueado exitosamente.',
+            showConfirmButton: false,
+            timer: 1500
+        })
+        setTimeout(() => {
+            location.href = "../index.html"
+        }, 1500); 
     } else {
-        alert('datos incorrectos, vuelva a intentarlo')
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'Los datos ingresados no corresponden a ningun usuario',
+            footer: '<p>¿No tienes una cuenta? <a href="./registrarte.html">Registrate</a></p>'
+        })
     }
 }

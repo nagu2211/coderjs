@@ -50,36 +50,61 @@ pago.addEventListener('submit', enviarPedido)
 /* pequeños retoques cuando le dan a confirmar pedido y vacia el localstorage del carrito */
 function enviarPedido(e){
     if((datosRegistro[1] == null) || (datosRegistro[5] == null)){
-        alert('debes iniciar sesion para finalizar compra')
+        Swal.fire({
+            icon: 'error',
+            title: 'Usuario desconocido',
+            text: 'Debes iniciar sesion para hacer alguna compra',
+            footer: '<a href="">Why do I have this issue?</a>'
+        })
     } else {
 
     e.preventDefault()
     const correo = document.querySelector('#correo').value
 
     if(correo === ''){
-        alert('Debes completar tu email')
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'Introduce tu correo electronico'
+        })
+    } else if(lista === null){
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'Tu carrito esta vacio',
+            footer: '<a href="./pages/catalogo.html">Ir a catalogo</a>'
+        })
     } else{
         const spinner = document.querySelector('#spinner')
         spinner.classList.add('d-flex')
         spinner.classList.remove('d-none')
+        location.href = "#spinner"
 
         setTimeout(() => {
         spinner.classList.remove('d-flex')
         spinner.classList.add('d-none') 
         pago.reset()
         }, 3000)
-
         const alertExito = document.createElement('p')
         alertExito.classList.add('alert', 'alerta', 'd-block', 'text-center', 'cold-md-12', 'mt-2', 'alert-success')
+        alertExito.setAttribute("id", "cartelCompra");
         alertExito.textContent = "Compra realizada exitosamente"
         alertexito.appendChild(alertExito)
+        setTimeout(()=>{
+        location.href = "#cartelCompra"
+        },3000)
+        
 
         setTimeout(() => {
             alertExito.remove()
-        }, 3000)
+        }, 5000)
+        
     }
-
     }
-    localStorage.clear()
+    setTimeout(() => {
+        window.location.reload()
+        localStorage.removeItem('carrito');
+    }, 5000);
+    
 }
 

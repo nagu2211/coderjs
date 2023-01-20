@@ -69,7 +69,11 @@ stockProductos.forEach((prod)=> {
 /* funcion de continuar compra */
 procesarCompra.addEventListener('click', ()=>{
     if(carrito.length === 0){
-        alert("Tu carrito esta vacio, agrega algun producto para continuar.")
+        Swal.fire({
+            icon: 'error',
+            title: 'Carrito vacio',
+            text: 'Agrega algun producto para continuar',
+        })
     } else {
         location.href = "../pages/comprando.html"
         procesarPedido()
