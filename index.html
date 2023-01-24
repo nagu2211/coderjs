@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="./stiles.css">
     <title>Qwerty - Zapatillas</title>
 </head>
@@ -22,6 +24,10 @@
                 <li><a href="#opiniones">Valoraciones</a></li>
                 <li><a href="#">Contacto</a></li>
             </ul>
+            <button id="boton-carrito"><i class="fa-solid fa-cart-arrow-down" id="boton-carrito"></i><span id="contadorCarrito">0</span></button>
+            <div id="bienvenido">
+                <a href="./pages/acceder.html" class="ocultarAcceder" id="cerrarSesion">Cerrar Sesion</a>
+            </div>
             <button type="button" class="ingresa" id="botonAcceder">Acceder</button>
         </nav>
     </header>
@@ -41,6 +47,18 @@
             </button></a>
         </div>
     </div>
+    <!-- Modal de carrito -->
+    <div class="modal-contenedor">
+        <div class="modal-carrito">
+            <h3>Carrito</h3>
+            <button id="carritoCerrar"><i class="fas fa-times-circle"></i></button>
+            <div class="modal-contenido"></div>
+            <p class="precioProducto">Precio total: $<span id="precioTotal">0</span></p>
+                <button id="vaciar-carrito" class="boton-agregar">Vaciar carrito</button>
+                <button id="procesarCompra" class="boton-agregar">Continuar compra</button>
+        </div>
+        
+    </div>
     <!--Seccion Qwerty-->
     <div class="seccionQwe" id="qwerty">
     <h2 class="titulosIndex">Marca Qwerty.</h2>
@@ -56,8 +74,8 @@
                     <h3>Qwerty Air Max</h3>
                 </div>
                 <div class="description">
-                    <h4>description</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur tempora vitae ab distinctio sint asperiores eos nostrum, eligendi repellendus explicabo?</p>
+                    <h4>descripcion</h4>
+                    <p>Zapatillas aerodinamicas semi deslizante especialmente para deportistas</p>
                 </div>
                 <div class="size">
                     <h4>Talles</h4>
@@ -73,10 +91,10 @@
                 <div class="buy">
                     <div class="price">
                         <sup>$</sup>
-                        <span>155</span>
+                        <span>25000</span>
                     </div>
                     <div class="btn">
-                        <a href="./pages/catalogo.html">Ver mas</a>
+                        <a href="./pages/catalogo.html">Al catalogo</a>
                     </div>
                 </div>
             </div>
@@ -93,8 +111,8 @@
                     <h3>Qwerty All Stars</h3>
                 </div>
                 <div class="description">
-                    <h4>description</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur tempora vitae ab distinctio sint asperiores eos nostrum, eligendi repellendus explicabo?</p>
+                    <h4>descripcion</h4>
+                    <p>Zapatillas aerodinamicas semi deslizante especialmente para deportistas</p>
                 </div>
                 <div class="size">
                     <h4>Talles</h4>
@@ -110,10 +128,10 @@
                 <div class="buy">
                     <div class="price">
                         <sup>$</sup>
-                        <span>155</span>
+                        <span>25000</span>
                     </div>
                     <div class="btn">
-                        <a href="./pages/catalogo.html">Ver mas</a>
+                        <a href="./pages/catalogo.html">Al catalogo</a>
                     </div>
                 </div>
             </div>
@@ -130,8 +148,8 @@
                     <h3>Qwerty New Balance</h3>
                 </div>
                 <div class="description">
-                    <h4>description</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur tempora vitae ab distinctio sint asperiores eos nostrum, eligendi repellendus explicabo?</p>
+                    <h4>descripcion</h4>
+                    <p>Zapatillas aerodinamicas semi deslizante especialmente para deportistas</p>
                 </div>
                 <div class="size">
                     <h4>Talles</h4>
@@ -147,10 +165,10 @@
                 <div class="buy">
                     <div class="price">
                         <sup>$</sup>
-                        <span>155</span>
+                        <span>20000</span>
                     </div>
                     <div class="btn">
-                        <a href="./pages/catalogo.html">Ver mas</a>
+                        <a href="./pages/catalogo.html">Al catalogo</a>
                     </div>
                 </div>
             </div>
@@ -168,7 +186,7 @@
                 </div>
                 <div class="description">
                     <h4>description</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur tempora vitae ab distinctio sint asperiores eos nostrum, eligendi repellendus explicabo?</p>
+                    <p>Zapatillas aerodinamicas semi deslizante especialmente para deportistas</p>
                 </div>
                 <div class="size">
                     <h4>Talles</h4>
@@ -184,10 +202,10 @@
                 <div class="buy">
                     <div class="price">
                         <sup>$</sup>
-                        <span>155</span>
+                        <span>15000</span>
                     </div>
                     <div class="btn">
-                        <a href="./pages/catalogo.html">Ver mas</a>
+                        <a href="./pages/catalogo.html">Al catalogo</a>
                     </div>
                 </div>
             </div>
@@ -205,7 +223,7 @@
                 </div>
                 <div class="description">
                     <h4>description</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur tempora vitae ab distinctio sint asperiores eos nostrum, eligendi repellendus explicabo?</p>
+                    <p>Zapatillas aerodinamicas semi deslizante especialmente para deportistas</p>
                 </div>
                 <div class="size">
                     <h4>Talles</h4>
@@ -221,10 +239,10 @@
                 <div class="buy">
                     <div class="price">
                         <sup>$</sup>
-                        <span>155</span>
+                        <span>30000</span>
                     </div>
                     <div class="btn">
-                        <a href="./pages/catalogo.html">Ver mas</a>
+                        <a href="./pages/catalogo.html">Al catalogo</a>
                     </div>
                 </div>
             </div>
@@ -242,7 +260,7 @@
                 </div>
                 <div class="description">
                     <h4>description</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur tempora vitae ab distinctio sint asperiores eos nostrum, eligendi repellendus explicabo?</p>
+                    <p>Zapatillas aerodinamicas semi deslizante especialmente para deportistas</p>
                 </div>
                 <div class="size">
                     <h4>Talles</h4>
@@ -258,10 +276,10 @@
                 <div class="buy">
                     <div class="price">
                         <sup>$</sup>
-                        <span>155</span>
+                        <span>15000</span>
                     </div>
                     <div class="btn">
-                        <a href="./pages/catalogo.html">Ver mas</a>
+                        <a href="./pages/catalogo.html">Al catalogo</a>
                     </div>
                 </div>
             </div>
@@ -495,6 +513,28 @@
             </div>
         </div>
     </section>
+    <footer class="footer">
+        
+            <nav>
+                <div class="logo">
+                    <h2><span class="Q">Q</span>werty</h2>
+                </div>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#masPopulares">+Populares</a></li>
+                    <li><a href="./pages/catalogo.html">Catalogo</a></li>
+                    <li><a href="#opiniones">Valoraciones</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="separadorFooter"></div>
+            <div>
+                <p class="derechos">©2023 ALL RIGHTS RESERVED</p>
+            </div>
+
+    </footer>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="./scripts.js"></script>
+    <script src="./catalogo.js"></script>
 </body>
 </html>

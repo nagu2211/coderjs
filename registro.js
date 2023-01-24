@@ -61,6 +61,13 @@ const botonAcceder = document.getElementById('button')
 botonAcceder.addEventListener('click',login)
 function login(){
     if((usuarioLog.value == datosRegistro[1]) && (passwordLog.value == datosRegistro[5])){
+        let login = []
+        let nombreLog = ''
+        let passwordLog = ''
+        nombreLog = document.querySelector('#usuario').value;
+        passwordLog = document.querySelector('#password').value;
+        login.push(nombreLog, passwordLog)
+        localStorage.setItem("login", JSON.stringify(login))
         Swal.fire({
             position: 'center',
             icon: 'success',
@@ -71,6 +78,7 @@ function login(){
         setTimeout(() => {
             location.href = "../index.html"
         }, 1500); 
+
     } else {
         Swal.fire({
             icon: 'error',

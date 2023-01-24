@@ -1,18 +1,4 @@
-/* PRODUCTOS DEL CATALOGO */ 
-let stockProductos = [
-    {id: 1, nombre: "Qwerty Air Max", tipo:"sport", cantidad: 1, desc: "Zapatillas aerodinamicas semi deslizante especialmente para deportistas ", precio: 25000, img:'../images/prueba-card.webp'},
-    {id: 2, nombre: "Qwerty All Stars", tipo:"sport", cantidad: 1, desc: "Zapatillas aerodinamicas semi deslizante especialmente para deportistas ", precio: 25000, img:'../images/prueba-card2.webp'},
-    {id: 3, nombre: "New Balance", tipo:"sport", cantidad: 1, desc: "Zapatillas aerodinamicas semi deslizante especialmente para deportistas ", precio: 20000, img:'../images/prueba-card3.webp'},
-    {id: 4, nombre: "Air Jordan", tipo:"sport", cantidad: 1, desc: "Zapatillas aerodinamicas semi deslizante especialmente para deportistas ", precio: 15000, img:'../images/prueba-card4.webp'},
-    {id: 5, nombre: "Qwerty Gazelle", tipo:"sport", cantidad: 1, desc: "Zapatillas aerodinamicas semi deslizante especialmente para deportistas ", precio: 30000, img:'../images/prueba-card5.webp'},
-    {id: 6, nombre: "Qwerty Classic", tipo:"sport", cantidad: 1, desc: "Zapatillas aerodinamicas semi deslizante especialmente para deportistas ", precio: 15000, img:'../images/prueba-card6.webp'},
-    {id: 7, nombre: "Wedgie Booties", tipo:"party", cantidad: 1, desc: "Botas que sobresalen en medio de la multitud especialmente para extrovertidos ", precio: 15000, img:'../images/cat7.webp'},
-    {id: 8, nombre: "Chelsea Boots", tipo:"casual/elegant", cantidad: 1, desc: "Botas elegantes o tipo casual , para tu reunion laboral o incluso para un paseo", precio: 22000, img:'../images/cat8.webp'},
-    {id: 9, nombre: "Nike Crazy Red", tipo:"sport/casual", cantidad: 1, desc: "Zapatillas de un tono rojo fuerte para destacar en tu outfit solo o acompañado.", precio: 33000, img:'../images/cat9.webp'},
-    {id: 10, nombre: "Nike Road", tipo:"casual", cantidad: 1, desc: "Zapatillas perfectas para todos los dias o para dar un paseo, Incluso llevarlas al cine de vez en cuando", precio: 18000, img:'../images/cat10.webp'},
-    {id: 11, nombre: "Gianvito Rossi", tipo:"elegant", cantidad: 1, desc: "Zapatos elegantes para reuniones, bautismos, casamientos. Si crees que son para ti dale a comprar", precio: 30000, img:'../images/cat11.webp'},
-    {id: 12, nombre: "Passion Beige", tipo:"casual", cantidad: 1, desc: "Si te gustan los colores suaves y vestir bien estas zapatillas casuales de vans son perfectas para ti", precio: 20000, img:'../images/cat12.webp'},
-]
+
 /* VARIABLES */
 const contenedor = document.getElementById('contenedor')
 const contadorCarrito = document.getElementById('contadorCarrito')
@@ -28,9 +14,11 @@ document.addEventListener("DOMContentLoaded", () => {
     carrito = JSON.parse(localStorage.getItem("carrito")) || [];
     mostrarCarrito();
 });
-
-/* modificando el dom para que muestre tarjetas de productos */
-stockProductos.forEach((prod)=> {
+/* modificando el dom para que muestre tarjetas de productos del json */
+fetch("/productos.json")
+.then((res)=>res.json())
+.then ((data)=>{
+    data.forEach((prod)=>{
     const { id, nombre, precio, desc, img,tipo} = prod;
     const div = document.createElement('div')
     div.classList.add('content')
@@ -54,15 +42,31 @@ stockProductos.forEach((prod)=> {
             text: "¡Agregado al carrito!",
             offset: {
             x: 50, 
-            y: 10, // 
+            y: 10,  
             },
             style: {
                 background: "linear-gradient(to top, #ff626d, #fcad72)",
             },
             }).showToast();
-        agregarAlCarrito(id)
+            
+            const existe = carrito.some(prod => prod.id === id)
+    
+            if(existe){
+                const prod = carrito.map(prod => {
+                    if(prod.id === id){
+                        prod.cantidad++
+                    }
+                })
+            } 
+            else {
+                const item = data.find((prod) => prod.id === id)
+                carrito.push(item)
+            }
+            
+            mostrarCarrito()
     })
     }
+    })
 })
 
 
@@ -122,23 +126,6 @@ vaciarCarrito.addEventListener('click', () => {
 })
 
 
-function agregarAlCarrito(id){
-    
-    const existe = carrito.some(prod => prod.id === id)
-
-    if(existe){
-        const prod = carrito.map(prod => {
-            if(prod.id === id){
-                prod.cantidad++
-            }
-        })
-    } else {
-        const item = stockProductos.find((prod) => prod.id === id)
-        carrito.push(item)
-    }
-    
-    mostrarCarrito()
-}
 
 function eliminarProducto(id){
     prodId = id
@@ -186,11 +173,5 @@ function guardarStorage(){
 }
 
 
-/* Redirigir a Acceder */ 
-const accederPagCat = document.getElementById('botonAccederCat')
 
-if(accederPagCat){
-accederPagCat.addEventListener('click', ()=>{
-    location.href = "./acceder.html"
-})
-}
+
