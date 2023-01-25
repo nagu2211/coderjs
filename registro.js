@@ -58,7 +58,9 @@ if(registro == null){
 }
 
 const botonAcceder = document.getElementById('button')
+if(botonAcceder){
 botonAcceder.addEventListener('click',login)
+}
 function login(){
     if((usuarioLog.value == datosRegistro[1]) && (passwordLog.value == datosRegistro[5])){
         let login = []

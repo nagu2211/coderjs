@@ -68,6 +68,7 @@ fetch("/productos.json")
     }
     })
 })
+.catch(err => console.log(err))
 
 
 /* funcion de continuar compra */
