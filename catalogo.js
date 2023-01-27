@@ -6,6 +6,7 @@ const vaciarCarrito = document.getElementById('vaciar-carrito')
 const procesarCompra = document.querySelector("#procesarCompra");
 
 
+
 let carrito=[]
 
 

@@ -19,14 +19,14 @@
 .navbar {
     height: 100vh;
     width: 100%;
-    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(./images/fondo-prueba.webp);
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(https://images.pexels.com/photos/250356/pexels-photo-250356.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
     background-size: cover;
     background-position: center;
 }
 .navbarCat {
     height: 100vh;
     width: 100%;
-    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(./images/fondocat.webp);
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(https://images.pexels.com/photos/609771/pexels-photo-609771.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
     background-size: cover;
     background-position: center;
 }
@@ -69,83 +69,65 @@ nav ul li a:hover{
 .cont-menu{
     display: none;
 }
-/* MEDIA QUERI MENU HAMBURGUESA */
-@media screen and (max-width: 975px){
-    header nav ul{
-        display: none;
-    }
-    header nav .logo{
-        display: none;
-    }
-    header nav{
-        display: none;
-    }
-    .icono-menu{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        padding: 40px 50px;
-        position: relative;
-        z-index: 10;
-        margin-right: 0;
-        padding-right: 0;
-    }
-    .carritoBoton{
-        display: flex;
-    }
-    
-    .icono-menu i{
-        vertical-align: top;
-        width: 40px;
-        cursor: pointer;
-    }
-    
-    /* Estilos para el contenedor del Menú */
-    .cont-menu{
-        display: inline-block;
-        background-color: rgb(51,50,53);
-        box-shadow: 2px 0px 5px 2px rgb(66,66,66);
-        width: 400px;
-        height: 100vh;
-        position: absolute;
-        top: 0;
-        left: 0;
-        transition: all .5s ease;
-        z-index: 9;
-    }
-    .active{
-        transform: translate(-600px);
-    }
-    .cont-menu ul{
-        padding: 100px 0px 20px 0px;
-        list-style: none;
-    }
-    
-    .cont-menu ul li {
-        color: white;
-        display: block;
-        font-size: 25px;
-        text-decoration: none;
-        padding: 10px 50px;
-        cursor: pointer;
-    }
-    
-    
-    .cont-menu ul a{
-        color: white;
-        display: block;
-        font-size: 25px;
-        text-decoration: none;
-        padding: 10px 50px;
-        cursor: pointer;
-        text-decoration: none;
-    }
-    .cont-menu ul li:hover{
-        background-color: rgb(228,228,228);
-        color: rgb(42,42,42);
-    }
-    
+.carritoBoton a{
+    color: #fff;
 }
+@media screen and (max-width: 950px){
+    .icono-menu{
+        display: inline-block;
+        text-align: center;
+        justify-content: center;
+        margin-left: 17px;
+    }
+    .icono-menu i{
+        font-size: 30px;
+    }
+    nav{
+        background-color: #282a2c;
+        height: 18%;
+    }
+    nav ul li{
+        display: block;
+
+    }
+    .menu{
+        margin-top: 110px;
+    margin-left: -47px;
+    background-color: #282a2c;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: absolute;
+    width: 100%;
+    }
+    nav .active{
+        transform: translate(-1000px);
+    }
+}
+@media screen and (max-width: 639px){
+    .icono-menu{
+        margin-left: 0px;
+    }
+    .logo{
+        display: none;
+    }
+}
+@media screen and (max-width: 528px){
+    .menu{
+        display: block;
+        width: 50%;
+        margin-top: 260px;
+        margin-left: -25.1px;
+        z-index: 10;
+    }
+}
+@media screen and (max-width: 400px){
+    .contIndex{
+        margin-left: 134px;
+    }
+}
+
+
 /*Navbar Compra*/
 .navbarCompra{
     height: 20%;
@@ -715,7 +697,23 @@ a{
 #boton-carrito:focus {
     outline: none;
 }
-
+.carritoIcono{
+    border: none;
+    color: #ff626d;
+    font-size: 20px;
+    background-color: white;
+    border-radius: 50%;
+    padding: 7px 6px;
+    transition: all .3s;
+}
+.carritoIcono:hover{
+    cursor: pointer;
+    color: white;
+    background-color: #ff626d;
+}
+.carritoIcono:focus{
+    outline: none;
+}
 #contenedor-productos {
     max-width: 1200px;
     margin: 60px auto;

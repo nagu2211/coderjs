@@ -4,6 +4,7 @@ const bienvenida = document.querySelector('#bienvenido')
 const login = localStorage.getItem('login')
 const accederPagCat = document.getElementById('botonAccederCat')
 const cerrarSesion = document.querySelector('#cerrarSesion')
+const botonAccederMedia = document.querySelector('#botonAccederMedia')
 
 if((registro !== null) && (login !== null)) {
     datosLogin = JSON.parse(login)
@@ -40,7 +41,8 @@ botonAcceder.addEventListener('click', ()=>{
 } else if(accederPagCat){
     accederPagCat.addEventListener('click', ()=>{
         location.href = "./acceder.html"})
-}
+} 
+
 /*Carrusel : flechas anterior y siguiente*/
 const siguiente = document.getElementById('next')
 const anterior = document.getElementById('prev')
@@ -57,7 +59,6 @@ anterior.addEventListener('click', ()=>{
 })
 }
 
-/* MENU HAMBURGUESA */
 const iconoMenu = document.querySelector('#icono-menu'),
     menu = document.querySelector('#menu');
 
@@ -66,13 +67,4 @@ iconoMenu.addEventListener('click', (e) => {
     // Alternamos estilos para el menú y body
     menu.classList.toggle('active');
     document.body.classList.toggle('opacity');
-
-    // Alternamos su atributo 'src' para el ícono del menú
-    const rutaActual = e.target.getAttribute('src');
-
-    if(rutaActual == 'img/open-menu.png'){
-        e.target.setAttribute('src','img/open-menu2.png');
-    }else{
-        e.target.setAttribute('src','img/open-menu.png');
-    }
 });
