@@ -731,6 +731,7 @@ a{
 }
 .precioProducto {
     font-weight: 700;
+    color: #fff;
 }
 .eliminarProducto {
     background-image: linear-gradient(to right, #ff626d, #fcad72 );
@@ -781,7 +782,7 @@ a{
 
 .modal-carrito {
     position: relative;
-    background-color: white;
+    background-color: #282a2c;
     min-width: 500px;
     padding: 20px;
     margin-top: -100%;
@@ -807,7 +808,7 @@ a{
     font-size: 20px;
     color: #ff626d;
     border: none;
-    background-color: white;
+    background-color: #282a2c;
 }
 .modal-carrito #carritoCerrar:hover {
     cursor: pointer;
@@ -861,7 +862,7 @@ a{
 } 
 .modal-contenido p{
     font-style: italic;
-    color: #0b0b0b;
+    color: #fff;
     font-size: large;
     font-weight: 900;
     text-align: center;
