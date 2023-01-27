@@ -91,16 +91,21 @@ function enviarPedido(e){
             text: 'Tu carrito esta vacio',
             footer: '<a href="./catalogo.html">Ir a catalogo</a>'
         })
-    } else if((datosRegistro[1] !== null) && (datosRegistro[5] !== null)){
-        
-        if(domicilioNuevo){
+    } else if(registro === null){
+        Swal.fire({
+            icon: 'error',
+            title: 'Usuario desconocido',
+            text: 'Debes iniciar sesion para hacer alguna compra',
+            
+        })} else if(domicilioNuevo){
             if(( domicilioNuevo.value === '') || (localidadNuevo.value === '')){
                 Swal.fire({
                     icon: 'error',
                     title: 'Error',
                     text: 'Introduce tus datos correctamente'
                 })
-            } else{
+            } 
+        }else{
                 const spinner = document.querySelector('#spinner')
             spinner.classList.add('d-flex')
             spinner.classList.remove('d-none')
@@ -130,42 +135,4 @@ function enviarPedido(e){
                 localStorage.removeItem('carrito');
             }, 5000);
             }
-        } else{
-            const spinner = document.querySelector('#spinner')
-            spinner.classList.add('d-flex')
-            spinner.classList.remove('d-none')
-            location.href = "#spinner"
-    
-            setTimeout(() => {
-            spinner.classList.remove('d-flex')
-            spinner.classList.add('d-none') 
-            pago.reset()
-            }, 3000)
-            const alertExito = document.createElement('p')
-            alertExito.classList.add('alert', 'alerta', 'd-block', 'text-center', 'cold-md-12', 'mt-2', 'alert-success')
-            alertExito.setAttribute("id", "cartelCompra");
-            alertExito.textContent = "Compra realizada exitosamente"
-            alertexito.appendChild(alertExito)
-            setTimeout(()=>{
-            location.href = "#cartelCompra"
-            },3000)
-            
-    
-            setTimeout(() => {
-                alertExito.remove()
-            }, 5000)
-            
-            setTimeout(() => {
-                window.location.reload()
-                localStorage.removeItem('carrito');
-            }, 5000);
-        }
-    } else{    
-        Swal.fire({
-            icon: 'error',
-            title: 'Usuario desconocido',
-            text: 'Debes iniciar sesion para hacer alguna compra',
-            
-        })}
-    
-}
+        }  
