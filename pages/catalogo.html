@@ -12,23 +12,46 @@
 </head>
 <body>
     <!--Header y navbar-->
-    <header class="navbarCat">
+    <header class="navbar">
+        <div class="icono-menu">
+            <i class="fa-solid fa-bars" id="icono-menu"></i>
+            <div class="carritoBoton">
+            <button id="boton-carrito"><i class="fa-solid fa-cart-arrow-down" id="boton-carrito"></i><span id="contadorCarrito">0</span></button>
+            <div id="bienvenido">
+                
+            </div>
+            <button type="button" class="ingresa" id="botonAcceder">Acceder</button>
+            </div>
+        </div>
+        <div class="cont-menu active" id="menu">
+            <ul>
+                <li class="logo"><h2><span class="Q">Q</span>werty</h2></li>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../index.html">+Populares</a></li>
+                <li><a href="#">Catalogo</a></li>
+                <li><a href="../index.html">Valoraciones</a></li>
+                <li><a href="./catalogo.html#contacto">Contacto</a></li>
+                <a href="./acceder.html" class="ocultarAcceder" id="cerrarSesion">Cerrar Sesion</a></li>
+            </ul>
+        </div>
+        
         <nav>
             <div class="logo">
                 <h2><span class="Q">Q</span>werty</h2>
             </div>
             <ul>
-                <li><a href="../index.html">Inicio</a></li>
-                <li><a href="../index.html#masPopulares">+Populares</a></li>
-                <li><a href="#">Catalogo</a></li>
-                <li><a href="../index.html#opiniones">Valoraciones</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#masPopulares">+Populares</a></li>
+                <li><a href="./pages/catalogo.html">Catalogo</a></li>
+                <li><a href="#opiniones">Valoraciones</a></li>
+                <li><a href="./pages/catalogo.html#contacto">Contacto</a></li>
             </ul>
+        
             <button id="boton-carrito"><i class="fa-solid fa-cart-arrow-down" id="boton-carrito"></i><span id="contadorCarrito">0</span></button>
-            <button type="button" class="ingresa" id="botonAccederCat">Acceder</button>
             <div id="bienvenido">
-                <a href="./acceder.html" id="cerrarSesion" class="ocultarAcceder">Cerrar Sesion</a>
+                <a href="./pages/acceder.html" class="ocultarAcceder" id="cerrarSesion">Cerrar Sesion</a>
             </div>
+            <button type="button" class="ingresa" id="botonAcceder">Acceder</button>
         </nav>
     </header>
     <!--contenido de la pagina-->
@@ -64,6 +87,26 @@
     </div>
     <!-- Seccion Contacto -->
     <h2 class="titulosIndex" id="contacto">Contacto.</h2>
+    <div class="seccionContacto">
+    <h4>Nos encontramos en Martinez : </h4>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3640.1653232974586!2d-58.51891471384026!3d-34.49555232674377!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb05662e4a08d%3A0x9811553c3a21048c!2sMart%C3%ADnez%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1674774366888!5m2!1ses-419!2sar" width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <p>Podes hacer tu pedido / envio gratis solo zona norte. <br>Importe minimo posible para el resto de zonas</p>
+    <p><br>Si tienes algun inconveniente no dudes en contactarnos :</p>
+    <div class="wp">
+        <i class="fa-brands fa-whatsapp"></i>
+        <p>+1234567890</p>
+    </div>
+    <div class="face">
+        <i class="fa-brands fa-facebook"></i>
+        <a href="#">/qwertyuiopPaginaOficial</a>
+    </div>
+    <div class="inst">
+        <i class="fa-brands fa-instagram"></i>
+        <a href="#">/qwertyuiopPaginaOficial</a>
+    </div>
+    </div>
+
+
 
     <footer class="footer">
         
@@ -87,8 +130,6 @@
         <div>
             <p class="derechos">©2023 ALL RIGHTS RESERVED</p>
         </div>
-
-
 </footer>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="../catalogo.js"></script>

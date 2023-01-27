@@ -13,6 +13,28 @@
 <body>
     <!--Header y navbar-->
     <header class="navbar">
+        <div class="icono-menu">
+            <i class="fa-solid fa-bars" id="icono-menu"></i>
+            <div class="carritoBoton">
+            <button id="boton-carrito"><i class="fa-solid fa-cart-arrow-down" id="boton-carrito"></i><span id="contadorCarrito">0</span></button>
+            <div id="bienvenido">
+                
+            </div>
+            <button type="button" class="ingresa" id="botonAcceder">Acceder</button>
+            </div>
+        </div>
+        <div class="cont-menu active" id="menu">
+            <ul>
+                <li class="logo"><h2><span class="Q">Q</span>werty</h2></li>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#masPopulares">+Populares</a></li>
+                <li><a href="./pages/catalogo.html">Catalogo</a></li>
+                <li><a href="#opiniones">Valoraciones</a></li>
+                <li><a href="./pages/catalogo.html#contacto">Contacto</a></li>
+                <a href="./pages/acceder.html" class="ocultarAcceder" id="cerrarSesion">Cerrar Sesion</a></li>
+            </ul>
+        </div>
+        
         <nav>
             <div class="logo">
                 <h2><span class="Q">Q</span>werty</h2>
@@ -24,6 +46,7 @@
                 <li><a href="#opiniones">Valoraciones</a></li>
                 <li><a href="./pages/catalogo.html#contacto">Contacto</a></li>
             </ul>
+        
             <button id="boton-carrito"><i class="fa-solid fa-cart-arrow-down" id="boton-carrito"></i><span id="contadorCarrito">0</span></button>
             <div id="bienvenido">
                 <a href="./pages/acceder.html" class="ocultarAcceder" id="cerrarSesion">Cerrar Sesion</a>
