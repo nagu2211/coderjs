@@ -487,7 +487,7 @@ i{
     width: max-content;
 }
 #formList{
-    width: 1280px;
+    width: 100%;
     max-width: 100%;
     overflow: auto;
     scroll-behavior: smooth;
@@ -495,10 +495,20 @@ i{
 #formList::-webkit-scrollbar{
     display: none;
 }
-/*Media queries carrusel*/
+/* Media queries carrusel*/
+@media screen and (max-width: 2000px){
+    .item{
+        width: calc(20vw - 30px);
+    }
+}
+@media screen and (max-width: 1280px){
+    .item{
+        width: calc(30vw - 20px);
+    }
+}
 @media screen and (max-width: 1024px){
     .item{
-        width: calc(33.3vw - 20px);
+        width: calc(50vw - 20px);
     }
     .direction{
         display: none;

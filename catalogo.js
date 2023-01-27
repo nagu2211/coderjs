@@ -46,8 +46,10 @@ fetch("../productos.json")
             y: 10,  
             },
             style: {
+                
                 background: "linear-gradient(to top, #ff626d, #fcad72)",
             },
+            duration: 1000,
             }).showToast();
             
             const existe = carrito.some(prod => prod.id === id)
