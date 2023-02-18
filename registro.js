@@ -2,9 +2,12 @@
 const buttonReg = document.getElementById('buttonReg')
 
 if(buttonReg){
-buttonReg.addEventListener('click',()=>{
-    registrarse();
-})
+    window.addEventListener('keypress', function(event){
+        if(event.key === "Enter"){
+            buttonReg.click()
+            registrarse()
+        }
+    })
 }
 function registrarse(){
     let registro = []
@@ -33,7 +36,7 @@ function registrarse(){
             icon: 'error',
             title: 'Error',
             text: 'Todos los campos son obligatorios',
-            footer: '<a href="">Why do I have this issue?</a>'
+
         })
     } else {
         Swal.fire(
@@ -58,9 +61,17 @@ if(registro == null){
 }
 
 const botonAcceder = document.getElementById('button')
+
 if(botonAcceder){
-botonAcceder.addEventListener('click',login)
-}
+    window.addEventListener('keypress', function(event){
+    if(event.key === "Enter"){
+        botonAcceder.click()
+        login()
+    }
+})}
+
+
+
 function login(){
     if((usuarioLog.value == datosRegistro[1]) && (passwordLog.value == datosRegistro[5])){
         let login = []
