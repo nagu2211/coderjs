@@ -105,7 +105,7 @@ function enviarPedido(e){
                     text: 'Introduce tus datos correctamente'
                 })
             } 
-        }else{
+            else{
                 const spinner = document.querySelector('#spinner')
             spinner.classList.add('d-flex')
             spinner.classList.remove('d-none')
@@ -134,5 +134,4 @@ function enviarPedido(e){
                 window.location.reload()
                 localStorage.removeItem('carrito');
             }, 5000);
-            }
-        }  
+            }}}  

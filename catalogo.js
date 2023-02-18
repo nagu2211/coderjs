@@ -55,7 +55,8 @@ fetch("../productos.json")
             const existe = carrito.some(prod => prod.id === id)
     
             if(existe){
-                const prod = carrito.map(prod => {
+                const prod = 
+                    carrito.map(prod => {
                     if(prod.id === id){
                         prod.cantidad++
                     }
@@ -91,7 +92,7 @@ procesarCompra.addEventListener('click', ()=>{
 const mostrarCarrito = () => {
     const modalBody = document.querySelector('.modal-contenedor .modal-carrito .modal-contenido')
     if(modalBody){
-    modalBody.innerHTML = ''
+    modalBody.innerHTML = '';
 
     carrito.forEach((prod) => {
         const { id, nombre, precio, img, cantidad,tipo} = prod;
@@ -127,6 +128,7 @@ const mostrarCarrito = () => {
 vaciarCarrito.addEventListener('click', () => {
     carrito.length = []
     mostrarCarrito()
+    window.location.reload()
 })
 
 
@@ -134,6 +136,7 @@ vaciarCarrito.addEventListener('click', () => {
 function eliminarProducto(id){
     prodId = id
     carrito = carrito.filter((prod) => prod.id !== prodId)
+    
     Toastify({
         text: "¡Producto eliminado del carrito!",
         offset: {
@@ -144,7 +147,9 @@ function eliminarProducto(id){
             background: "linear-gradient(to top, #ff626d, #fcad72)",
         },
         }).showToast();
-    mostrarCarrito()
+        window.location.reload()
+        mostrarCarrito()
+        
 }
 
 /* INICIO DEL MODAL */
