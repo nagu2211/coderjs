@@ -78,6 +78,37 @@ function procesarPedido(){
     })
     totalProceso.innerText = listaCarrito.reduce((acc,prod) => acc + prod.cantidad * prod.precio, 0)
 } 
+function procesarLaCompra(){
+    const spinner = document.querySelector('#spinner')
+            spinner.classList.add('d-flex')
+            spinner.classList.remove('d-none')
+            location.href = "#spinner"
+    
+            setTimeout(() => {
+            spinner.classList.remove('d-flex')
+            spinner.classList.add('d-none') 
+            pago.reset()
+            }, 3000)
+            const alertExito = document.createElement('p')
+            alertExito.classList.add('alert', 'alerta', 'd-block', 'text-center', 'cold-md-12', 'mt-2', 'alert-success')
+            alertExito.setAttribute("id", "cartelCompra");
+            alertExito.textContent = "Compra realizada exitosamente"
+            alertexito.appendChild(alertExito)
+            setTimeout(()=>{
+            location.href = "#cartelCompra"
+            },3000)
+            
+    
+            setTimeout(() => {
+                alertExito.remove()
+            }, 5000)
+            
+            setTimeout(() => {
+                window.location.reload()
+                localStorage.removeItem('carrito');
+            }, 5000);
+            
+}
 pago.addEventListener('submit', enviarPedido)
 /* pequeños retoques cuando le dan a confirmar pedido y vacia el localstorage del carrito */
 function enviarPedido(e){
@@ -106,32 +137,9 @@ function enviarPedido(e){
                 })
             } 
             else{
-                const spinner = document.querySelector('#spinner')
-            spinner.classList.add('d-flex')
-            spinner.classList.remove('d-none')
-            location.href = "#spinner"
-    
-            setTimeout(() => {
-            spinner.classList.remove('d-flex')
-            spinner.classList.add('d-none') 
-            pago.reset()
-            }, 3000)
-            const alertExito = document.createElement('p')
-            alertExito.classList.add('alert', 'alerta', 'd-block', 'text-center', 'cold-md-12', 'mt-2', 'alert-success')
-            alertExito.setAttribute("id", "cartelCompra");
-            alertExito.textContent = "Compra realizada exitosamente"
-            alertexito.appendChild(alertExito)
-            setTimeout(()=>{
-            location.href = "#cartelCompra"
-            },3000)
-            
-    
-            setTimeout(() => {
-                alertExito.remove()
-            }, 5000)
-            
-            setTimeout(() => {
-                window.location.reload()
-                localStorage.removeItem('carrito');
-            }, 5000);
-            }}}  
+                procesarLaCompra()
+                }}
+            else{
+                procesarLaCompra()
+            }
+        }  

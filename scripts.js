@@ -40,7 +40,7 @@ botonAcceder.addEventListener('click', ()=>{
     })
 } else if(accederPagCat){
     accederPagCat.addEventListener('click', ()=>{
-        location.href = "./acceder.html"})
+        location.href = "./pages/acceder.html"})
 } 
 
 /*Carrusel : flechas anterior y siguiente*/

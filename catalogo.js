@@ -84,7 +84,7 @@ procesarCompra.addEventListener('click', ()=>{
             text: 'Agrega algun producto para continuar',
         })
     } else {
-        location.href = "../pages/comprando.html"
+        location.href = "./pages/comprando.html"
         procesarPedido()
     }
 })
