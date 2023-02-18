@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     mostrarCarrito();
 });
 /* modificando el dom para que muestre tarjetas de productos del json */
-fetch("../productos.json")
+fetch("./productos.json")
 .then((res)=>res.json())
 .then ((data)=>{
     data.forEach((prod)=>{
